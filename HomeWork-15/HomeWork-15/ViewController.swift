@@ -46,11 +46,19 @@ class ViewController: UIViewController {
             
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(screenTapped(_:)))
             view.addGestureRecognizer(tapGesture)
+            
+            firstButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .primaryActionTriggered)
         }
     
     @objc
     func screenTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(false)
+    }
+    
+    @objc
+    func buttonTapped(_ sender: UIButton) {
+        let secondVC = storyboard?.instantiateViewController(withIdentifier: "SecondViewController")    // Add VC!!!
+        present(secondVC!, animated: true, completion: nil)
     }
 
 }
