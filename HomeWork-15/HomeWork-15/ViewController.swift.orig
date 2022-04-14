@@ -57,15 +57,13 @@ class ViewController: UIViewController {
     
     @objc
     func buttonTapped(_ sender: UIButton) {
-        
-        let secondVC = SeconViewController()
-        present(secondVC, animated: true, completion: nil)
-        
+        let secondVC = storyboard?.instantiateViewController(withIdentifier: "SecondViewController")    // Add VC!!!
+        present(secondVC!, animated: true, completion: nil)
     }
 
 }
-//<<<<<<< HEAD
-//=======
+<<<<<<< HEAD
+=======
 
 class SeconViewController: UIViewController {
     
@@ -96,4 +94,4 @@ class SeconViewController: UIViewController {
         dismiss(animated: true)
     }
 }
-//>>>>>>> SecondVC
+>>>>>>> SecondVC
